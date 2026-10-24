@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+    font-family: 'Inter', sans-serif;
+    background: #0a0d1a;
+    color: #e2e8f0;
+  }
+}
+
+/* ─── Global dark background with animated mesh ─── */
+.dark-mesh {
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(99, 51, 255, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 10%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, rgba(139, 92, 246, 0.10) 0%, transparent 55%),
+    #0a0d1a;
+}
+
+/* ─── Glassmorphism panels ─── */
+.glass {
+  background: rgba(18, 24, 52, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(99, 102, 241, 0.18);
+}
+
+.glass-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-hover:hover {
+  background: rgba(30, 36, 72, 0.82);
+  border-color: rgba(129, 140, 248, 0.35);
+  box-shadow: 0 0 28px rgba(99, 102, 241, 0.12), 0 8px 32px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+/* ─── Accent glow utilities ─── */
+.glow-indigo {
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.3), 0 4px 16px rgba(0,0,0,0.5);
+}
+.glow-violet {
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.35), 0 4px 16px rgba(0,0,0,0.5);
+}
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.25), 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* ─── Both-models highlight card ─── */
+.both-models-card {
+  border: 1px solid rgba(129, 140, 248, 0.45) !important;
+  background: rgba(30, 27, 75, 0.75) !important;
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.18), 0 4px 24px rgba(0,0,0,0.5) !important;
+}
+.both-models-card:hover {
+  border-color: rgba(167, 139, 250, 0.6) !important;
+  box-shadow: 0 0 36px rgba(139, 92, 246, 0.28), 0 8px 32px rgba(0,0,0,0.6) !important;
+}
+
+/* ─── Main instrument card (other models) ─── */
+.instrument-card {
+  background: rgba(15, 20, 42, 0.80);
+  border: 1px solid rgba(51, 65, 110, 0.55);
+  transition: all 0.22s cubic-bezier(0.16,1,0.3,1);
+}
+.instrument-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(22, 28, 60, 0.88);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55), 0 0 16px rgba(99,102,241,0.1);
+  transform: translateY(-2px);
+}
+
+/* ─── Confidence bar gradient ─── */
+.bar-both   { background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa); }
+.bar-cnn14  { background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
+.bar-custom { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+.bar-generic{ background: linear-gradient(90deg, #334155, #475569); }
+
+/* ─── Dark scrollbar ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0d1126; }
+::-webkit-scrollbar-thumb { background: #2d3a6b; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #4f5fa3; }
+
+/* ─── Range slider dark style ─── */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  outline: none;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.5), 0 2px 8px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+input[type='range']::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 5px rgba(99,102,241,0.4), 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ─── Fade-in animation ─── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-in {
+  animation: fadeSlideIn 0.35s cubic-bezier(0.16,1,0.3,1) both;
+}

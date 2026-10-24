@@ -1,0 +1,66 @@
+# ─── Python ───
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+*.spec
+.env
+.env.*
+venv/
+.venv/
+env/
+ENV/
+
+# ─── Large datasets & raw data (too big for git) ───
+*.zip
+*.tar.gz
+*.tar.bz2
+openmic-2018/
+KSHMR_Dataset/
+backend/My CNN backend/KSHMR_Dataset/
+backend/My CNN backend/openmic-2018/
+backend/My CNN backend/.venv/
+
+# ─── Cached / temp files ───
+*.log
+*.tmp
+*.cache
+.cache/
+tmp/
+temp/
+
+# ─── Node / Frontend ───
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.local
+
+# ─── OS ───
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ─── IDE ───
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Uvicorn / FastAPI ───
+uploads/
+*.pid
+
+# ─── PANNs model weights (large ~300MB checkpoint) ───
+# Small fine-tuned checkpoints are OK to commit
+# CNN14_mAP=0.431.pth (if it exists — very large, exclude)
+CNN14_mAP*.pth
+
+# ─── Evaluation results (regeneratable) ───
+backend/My CNN backend/evaluation_results/
